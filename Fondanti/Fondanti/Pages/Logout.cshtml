@@ -1,3 +1,7 @@
 ﻿@{
-    
+    if (Session["LoggedIn"] != null)
+    {
+        Session.Clear();
+    }
+    Response.Redirect("~/Pages/Homepage.cshtml");
 }
