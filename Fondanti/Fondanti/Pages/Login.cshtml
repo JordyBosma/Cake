@@ -12,16 +12,13 @@
             string Username = Request.Form["Username"];
             string Password = Request.Form["Password"];
 
-            string select = "SELECT * FROM Login WHERE Username = @0 AND Password = @1";
-
-            var search_command = "SELECT Id FROM Accounts WHERE Username = @0 AND Password = @1";
-            var selectedData = db.QueryValue(search_command, Username, Password);
+            string select = "SELECT * FROM Accounts WHERE Username = @0 AND Password = @1";
 
             if (db.QuerySingle(select, Username, Password) != null)
             {
                 Session["LoggedIn"] = true;
                 Session["Username"] = Username;
-                Response.Redirect("~/Home.cshtml");
+                Response.Redirect("~/Pages/Homepage.cshtml");
             }
         }
     }
