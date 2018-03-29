@@ -10,18 +10,18 @@
         if (IsPost && Validation.IsValid())
         {
             string Username = Request.Form["Username"];
-            string password = Request.Form["password"];
+            string Password = Request.Form["Password"];
 
-            string select = "SELECT * FROM Login WHERE Username = @0 AND password = @1";
+            string select = "SELECT * FROM Login WHERE Username = @0 AND Password = @1";
 
-            var search_command = "SELECT Id FROM Login WHERE Username = @0 AND password = @1";
-            var selectedData = db.QueryValue(search_command, Username, password);
+            var search_command = "SELECT Id FROM Accounts WHERE Username = @0 AND Password = @1";
+            var selectedData = db.QueryValue(search_command, Username, Password);
 
-            if (db.QuerySingle(select, Username, password) != null)
+            if (db.QuerySingle(select, Username, Password) != null)
             {
                 Session["LoggedIn"] = true;
                 Session["Username"] = Username;
-                Response.Redirect("~/ContentPage.cshtml");
+                Response.Redirect("~/Home.cshtml");
             }
         }
     }
@@ -33,8 +33,8 @@
 <body>
     @RenderPage("Navbar.cshtml")
     <div class="container">
-        <h2>Administrator login.</h2>
         <div class="row justify-content-center">
+            <h2>Administrator login.</h2>
             <div class="login col-lg-3">
                 <form class="justify-content-center" method="post" action="">
                     <div class="form-group">
@@ -42,7 +42,7 @@
                         @Html.ValidationMessage("Username")
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="password" name="password" value="" placeholder="Wachtwoord">
+                        <input class="form-control" type="password" name="Password" value="" placeholder="Wachtwoord">
                         @Html.ValidationMessage("Password")
                     </div>
                     <div class="form-group">
