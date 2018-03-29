@@ -1,8 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
-.footer {
-    background-color:#585051;
-    text-align: center;
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 180px;
+    background-color: azure;
+    /* must be same height as the footer */
+}
+
+#footer {
+    position: relative;
+    margin-top: -180px;
+    /* negative value of footer height */
+    height: 180px;
     clear: both;
+    background-color: gold;
+    color:white;
+    text-align:center;
+}
+
+
+/* Opera Fix thanks to Maleika (Kohoutec) */
+
+body:before {
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+    /* thank you Erik J - negate effect of float*/
 }
 
 .logoimage{

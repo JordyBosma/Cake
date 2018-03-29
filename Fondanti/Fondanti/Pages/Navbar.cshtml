@@ -19,8 +19,18 @@
                 <a class="nav-link" href="~/Pages/Contact.cshtml">Contact</a>
             </li>
         </ul>
+        @if (Session["LoggedIn"] == null)
+        {
         <ul class="nav navbar-nav navbar-right">
             <a class="nav-link" href="~/Pages/Login.cshtml">Login</a>
         </ul>
+        }
+        
+        @if (Session["LoggedIn"] != null)
+        {
+            <h6>Ingelogd als @Session["Username"]</h6>
+            <a class="btn btn-outline-primary" href="~/Pages/Logout.cshtml" role="button">Log out</a>
+        }
+
     </div>
 </nav>
