@@ -1,26 +1,58 @@
 ﻿@{
-    
+
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-@RenderPage("Header.cshtml")
+    @RenderPage("Header.cshtml")
 </head>
 <body>
     @RenderPage("Navbar.cshtml")
     <section>
-        Hallo
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa vitae tortor condimentum lacinia quis vel eros. Vestibulum lorem sed risus ultricies tristique. Egestas fringilla phasellus faucibus scelerisque eleifend. At risus viverra adipiscing at in. Vitae aliquet nec ullamcorper sit amet. Urna nunc id cursus metus aliquam. Mi tempus imperdiet nulla malesuada pellentesque elit. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Tellus at urna condimentum mattis pellentesque id. Proin nibh nisl condimentum id venenatis a condimentum. Cras sed felis eget velit aliquet sagittis id consectetur. In nibh mauris cursus mattis molestie a iaculis. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Morbi tristique senectus et netus et malesuada. Amet tellus cras adipiscing enim eu turpis. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Vitae proin sagittis nisl rhoncus mattis rhoncus urna.
-
-        Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Morbi tristique senectus et netus et malesuada fames. In fermentum posuere urna nec. Phasellus vestibulum lorem sed risus ultricies. Ipsum consequat nisl vel pretium. Mattis pellentesque id nibh tortor. Ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor. Consectetur adipiscing elit ut aliquam. At augue eget arcu dictum varius duis at consectetur lorem. Eu consequat ac felis donec et odio pellentesque. Sed nisi lacus sed viverra tellus in. Etiam sit amet nisl purus in. Odio morbi quis commodo odio aenean sed adipiscing.
-
-        Neque convallis a cras semper auctor neque vitae. Placerat in egestas erat imperdiet. Libero volutpat sed cras ornare. Quis commodo odio aenean sed adipiscing. Neque gravida in fermentum et sollicitudin ac. Sodales ut etiam sit amet nisl purus in mollis. Vestibulum rhoncus est pellentesque elit ullamcorper. Nunc aliquet bibendum enim facilisis gravida neque convallis a. Enim praesent elementum facilisis leo. Consequat mauris nunc congue nisi vitae suscipit. Montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Dignissim diam quis enim lobortis scelerisque fermentum. Blandit aliquam etiam erat velit. Rhoncus mattis rhoncus urna neque viverra justo nec. Rhoncus urna neque viverra justo nec ultrices dui. Quisque egestas diam in arcu cursus. Nascetur ridiculus mus mauris vitae ultricies leo. Morbi enim nunc faucibus a pellentesque.
-
-        Consectetur purus ut faucibus pulvinar elementum integer. Ut venenatis tellus in metus vulputate eu scelerisque felis. Mauris a diam maecenas sed enim ut sem viverra aliquet. Nec sagittis aliquam malesuada bibendum arcu vitae. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Sodales ut etiam sit amet nisl purus in mollis nunc. Vulputate enim nulla aliquet porttitor lacus luctus accumsan. Mi bibendum neque egestas congue quisque egestas. Volutpat sed cras ornare arcu dui vivamus arcu. Libero justo laoreet sit amet cursus sit amet. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Integer vitae justo eget magna fermentum. Euismod lacinia at quis risus sed vulputate.
-
-        Morbi non arcu risus quis. Egestas congue quisque egestas diam in arcu cursus euismod. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Aliquet enim tortor at auctor urna nunc id. Enim tortor at auctor urna nunc id cursus metus. Sit amet risus nullam eget felis eget nunc lobortis mattis. Odio tempor orci dapibus ultrices in iaculis. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Odio aenean sed adipiscing diam donec adipiscing tristique risus. Id porta nibh venenatis cras sed. Amet justo donec enim diam vulputate.
+        <h1>Home</h1>
+        <h3>Welkom bij Fondanti!</h3>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="carouselExampleIndicators" class="carousel slide d-block w-50" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 carousel_test" src="~/Images/minecraft.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Minecraft verjaardagstaart</h5>
+                                <p>Leuke verjaardagtaart voor de jarige Henk</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 carousel_test" src="~/Images/trouwerij.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Prachtige trouwtaart</h5>
+                                <p>Viel vooral heerlijk in de smaak ;p</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 carousel_test" src="~/Images/verjaardag.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Verjaardagstaart</h5>
+                                <p>Voor de 2 jarige Fedde</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-
-
     @RenderPage("Footer.cshtml")
 </body>
 </html>
