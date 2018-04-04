@@ -15,58 +15,66 @@
 <body>
     @RenderPage("Navbar.cshtml")
     <section>
-        <div class="container">
-            <div class="container-fluid">
-                <h1>Prijzen ingredienten</h1>
-                <p>Verander hier de prijzen van de ingredienten. De prijzen opgegeven, zijn prijzen per persoon (p.p.)</p>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Chocolate cake</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+        @if (Session["LoggedIn"] != null)
+        {
+            <div class="container">
+                <div class="container-fluid">
+                    <h1>Prijzen ingredienten</h1>
+                    <p>Verander hier de prijzen van de ingredienten. De prijzen opgegeven, zijn prijzen per persoon (p.p.)</p>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Chocolate cake</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Red velvet cake</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Biscuitdeeg</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Fondant</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Marsepein</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Champagneroom vulling</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Gele room met oreo vulling</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Kindervulling</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Eenvoudig niveau</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Gemiddeld niveau</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-6" style="text-align:left">Uitgebreid niveau</div>
+                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
+                    </div>
+                    <input class="btn btn-primary" type="submit" name="commit" value="Wijzigingen toepassen" />
                 </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Red velvet cake</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Biscuitdeeg</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Fondant</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Marsepein</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Champagneroom vulling</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Gele room met oreo vulling</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Kindervulling</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Eenvoudig niveau</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Gemiddeld niveau</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6" style="text-align:left">Uitgebreid niveau</div>
-                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="suiker" value="" placeholder="Current price" size="4"></div>
-                </div>
-                <input class="btn btn-primary" type="submit" name="commit" value="Wijzigingen toepassen" />
             </div>
-        </div>
-</section>
+        }
+        else
+        {
+            <h1>U moet ingelogd zijn om toegang te krijgen op deze pagina!</h1>
+            <p>Indien u niet de administrator bent, hoeft u niets te doen op deze pagina.</p>
+        }
+    </section>
 
     @RenderPage("Footer.cshtml")
 </body>
