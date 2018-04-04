@@ -31,8 +31,8 @@
     @RenderPage("Navbar.cshtml")
     <div class="container">
         <div class="row justify-content-center">
-            <h2>Administrator login.</h2>
             <div class="login col-lg-3">
+                <h2>Administrator login.</h2>
                 <form class="justify-content-center" method="post" action="">
                     <div class="form-group">
                         <input class="form-control" type="text" name="Username" value="" placeholder="Gebruikersnaam">
@@ -49,8 +49,9 @@
             </div>
         </div>
     </div>
-
-
-    @RenderPage("Footer.cshtml")
+    <section>
+        <h5>Als bezoeker van Fondanti heeft u geen account nodig!</h5>
+    </section>
+        @RenderPage("Footer.cshtml")
 </body>
 </html>

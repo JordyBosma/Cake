@@ -18,18 +18,26 @@
             <li class="nav-item">
                 <a class="nav-link" href="~/Pages/Contact.cshtml">Contact</a>
             </li>
+            @if (Session["LoggedIn"] != null)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Pages/Adminpage.cshtml" role="button">Administratief</a>
+                </li>
+            }
         </ul>
         @if (Session["LoggedIn"] == null)
         {
-        <ul class="nav navbar-nav navbar-right">
-            <a class="nav-link" href="~/Pages/Login.cshtml">Login</a>
-        </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <a class="nav-link" href="~/Pages/Login.cshtml">Login</a>
+            </ul>
         }
-        
+
         @if (Session["LoggedIn"] != null)
         {
             <h6>Ingelogd als @Session["Username"]</h6>
-            <a class="btn btn-outline-primary" href="~/Pages/Logout.cshtml" role="button">Log out</a>
+            <ul class="nav navbar-nav navbar-right">
+                <a class="nav-link" href="~/Pages/Logout.cshtml">Log out</a>
+            </ul>
         }
 
     </div>
