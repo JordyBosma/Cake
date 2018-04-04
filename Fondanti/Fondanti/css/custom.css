@@ -3,20 +3,12 @@
     padding: 0;
 }
 
-html,
-body {
+html, body {
     height: 100%;
+   
 }
 
 
-#footer {
-    position: relative;
-    margin-top: 10px;
-    height:46px;
-    clear: both;
-    color:black;
-    text-align:center;
-}
 
 .logoimage{
     height:80px;
@@ -188,3 +180,4 @@ img.hover-shadow {
 .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
+
