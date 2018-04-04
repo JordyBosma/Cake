@@ -1,5 +1,12 @@
-﻿@{
-    
+﻿@using WebMatrix.Data
+
+@{
+    ///Het initializeren van de database.
+    Database db;
+    using (db = Database.Open("Db_fondanti"))
+    {
+
+    }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,7 +14,6 @@
 </head>
 <body>
     @RenderPage("Navbar.cshtml")
-
 
 
     @RenderPage("Footer.cshtml")
