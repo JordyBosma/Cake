@@ -14,16 +14,17 @@
 </head>
 <body>
     @RenderPage("Navbar.cshtml")
-    <div class="Wrapper">
-        <form class="justify-content-center" method="post">
-            <div class="form-group">
-                <input class="form-control" type="text" name="Prijs Input" placeholder="FooBar">
-            </div>
-            <div class="form-group">
-                <input class="btn btn-outline-primary" type="submit" name="Confirm" value="Confirm">
-            </div>
-        </form>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
     </div>
+
     @RenderPage("Footer.cshtml")
 </body>
 </html>
