@@ -1,0 +1,29 @@
+﻿@using WebMatrix.Data
+
+@{
+    ///Het initializeren van de database.
+    Database db;
+    using (db = Database.Open("Db_fondanti"))
+    {
+
+    }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @RenderPage("Header.cshtml")
+</head>
+<body>
+    @RenderPage("Navbar.cshtml")
+    <div class="Wrapper">
+        <form class="justify-content-center" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" name="Prijs Input" placeholder="FooBar">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-outline-primary" type="submit" name="Confirm" value="Confirm">
+            </div>
+        </form>
+    </div>
+    @RenderPage("Footer.cshtml")
+</body>
+</html>
