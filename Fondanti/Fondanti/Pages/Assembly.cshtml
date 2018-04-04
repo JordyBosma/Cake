@@ -11,10 +11,10 @@
         <h1>Taart samenstellen</h1>
         <p>U kunt hier uw taart samenstellen naar eigen smaak.</p>
         <div class="container">
-            <form method="post">
+            <form  method="post">
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control inputstl" placeholder="Aantal personen:">
+                        <input type="number" class="form-control inputstl" placeholder="Aantal personen:">
                     </div>
                     <div class="col">
                         <input type="text" class="form-control inputstl" placeholder="Aantal lagen:">
@@ -23,10 +23,8 @@
                         <input type="text" class="form-control inputstl" placeholder="Vulling:">
                     </div>
                     <div class="col">
-                        <select class="selectpicker form-control inputstl" data-style="btn-primary" multiple data-max-options="2">
-                            <option>Marsepein</option>
-                            <option>Fondant</option>
-                        </select>
+                        <label class="checkbox-inline"><input type="checkbox" value="">Fondant</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="">Marsepein</label>
                     </div>
                 </div>
                 <br />
