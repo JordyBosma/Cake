@@ -2,27 +2,23 @@
 
 @{
     ///Het initializeren van de database.
+    IEnumerable<dynamic> rows = null;
     Database db;
     using (db = Database.Open("Db_fondanti"))
     {
-        string ingredients = "SELECT IngName FROM Prices";
-        string prices = "SELECT IngPrice FROM Prices";
+        rows = db.Query("SELECT * FROM Prices");
 
-        if (IsPost)
+        if (!Request.QueryString["UpdateID"].IsEmpty())
         {
-            var Chocola = Request.Form["Chocola"];
-            var RedVelvet = Request.Form["RedVelvet"];
-            var Biscuitdeeg = Request.Form["Biscuitdeeg"];
-            var Fondant = Request.Form["Fondant"];
-            var Marsepein = Request.Form["Marsepein"];
-            var ChampagneRoom = Request.Form["ChampagneRoom"];
-            var GeleRoom = Request.Form["GeleRoom"];
-            var VruchtencompoteRoom = Request.Form["VruchtencompoteRoom"];
-            var Eenvoudig = Request.Form["Eenvoudig"];
-            var Gemiddeld = Request.Form["Gemiddeld"];
-            var Uitgebreid = Request.Form["Uitgebreid"];
+            foreach (var row in rows)
+            {
+                string RowPrice = "prijs_" + Convert.ToString(row.IngredientID);
+                double Prijs = Convert.ToDouble(Request.Form[RowPrice]);
+                int UpdateID = Request.QueryString["UpdateID"].AsInt();
+                string update = "Update Prices SET IngPrice = @0 WHERE IngredientID = @1";
+                db.Execute(update, Prijs, UpdateID);
+            }
         }
-
     }
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,56 +30,20 @@
     <section>
         @if (Session["LoggedIn"] != null)
         {
-            <div class="container">
-                <div class="container-fluid">
-                    <h1>Prijzen ingredienten</h1>
-                    <p>Verander hier de prijzen van de ingredienten. De prijzen opgegeven, zijn prijzen per persoon (p.p.)</p>
-                   
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Chocolate cake</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Chocola" value="@Chocola" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Red velvet cake</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="RedVelvet" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Biscuitdeeg</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Biscuitdeeg" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Fondant</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Fondant" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Marsepein</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Marsepein" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Champagneroom vulling</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="ChampagneRoom" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Gele room met oreo vulling</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="GeleRoom" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Vruchtencompote Room (kindervulling)</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="VruchtencompoteRoom" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Eenvoudig niveau</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Eenvoudig" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Gemiddeld niveau</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Gemiddeld" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-6" style="text-align:left">Uitgebreid niveau</div>
-                        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"><input type="number" name="Uitgebreid" value="" placeholder="Current price" size="4"></div>
-                    </div>
-                    <input class="btn btn-primary" type="submit" name="commit" value="Wijzigingen toepassen" />
+            <div class="container-fluid">
+                <h1>Prijzen ingredienten</h1>
+                <p>Hier kunt u de prijzen van de ingredienten invullen. Alle aangegeven prijzen zijn per persoon (p.p.).</p>
+                <div class="row">
+                    <form method="post">
+                        @foreach (var row in rows)
+                        {
+                            <div class="col-sm-5 col-md-6" style="text-align:left">@row.IngName</div>
+                            <div class="col-sm-5 col-sm-offset-2 col-md-4 col-md-offset-0">
+                                €<input type="text" name="prijs_@(row.IngredientID)" value="@row.IngPrice">
+                            </div>
+                            <button type="submit"><a href="~/Pages/Adminpage.cshtml?UpdateID=@row.IngredientID">Bewerk</a></button>
+                        }
+                    </form>
                 </div>
             </div>
         }
