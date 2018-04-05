@@ -1,84 +1,86 @@
 ﻿@{
-    
+
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     @RenderPage("Header.cshtml")
 </head>
 <body>
-    @RenderPage("Navbar.cshtml")
-    <section>
-        <h1>Contact</h1>
-        <br />
-        <div class="d-flex justify-content-around bd-highlight">
-            <div class="p-2 bd-highlight">
-                <h3>Adres</h3>
-                <p>
-                    Galamagracht 40<br />
-                    8651 EC  IJLST
-                </p>
-            </div>
-            <div class="p-2 bd-highlight">
-                <h3>Telefoon</h3>
-                <p>06 16064485</p>
-            </div>
-            <div class="p-2 bd-highlight">
-                <h3>Mail</h3>
-                <A HREF="mailto:nic.lagerweij@gmail.com">nic.lagerweij@gmail.com</A>
-            </div>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.621538378149!2d5.6218753158257675!3d53.00918907990968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c8ee0fef5aaa61%3A0x8469b21104b85c0a!2sGalamagracht+40%2C+8651+EC+IJlst!5e0!3m2!1snl!2snl!4v1522154336342" width="700" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        <br /> <br />
-        <h3>Misschien heeft u vragen</h3>
-        <h3>die eerder zijn gesteld.</h3>
-        <br />
-        <h2>Veelgestelde vragen:</h2>
-        <hr class="d-table" />
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Vraag 1.....
-                        </button>
-                    </h5>
+    <div class="main-container">
+        @RenderPage("Navbar.cshtml")
+        <section>
+            <h1>Contact</h1>
+            <br />
+            <div class="d-flex justify-content-around bd-highlight">
+                <div class="p-2 bd-highlight">
+                    <h3>Adres</h3>
+                    <p>
+                        Galamagracht 40<br />
+                        8651 EC  IJLST
+                    </p>
                 </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        Hier komt het antwoord op vraag 1...
+                <div class="p-2 bd-highlight">
+                    <h3>Telefoon</h3>
+                    <p>06 16064485</p>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <h3>Mail</h3>
+                    <A HREF="mailto:nic.lagerweij@gmail.com">nic.lagerweij@gmail.com</A>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.621538378149!2d5.6218753158257675!3d53.00918907990968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c8ee0fef5aaa61%3A0x8469b21104b85c0a!2sGalamagracht+40%2C+8651+EC+IJlst!5e0!3m2!1snl!2snl!4v1522154336342" width="700" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <br /> <br />
+            <h3>Misschien heeft u vragen</h3>
+            <h3>die eerder zijn gesteld.</h3>
+            <br />
+            <h2>Veelgestelde vragen:</h2>
+            <hr class="d-table" />
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Vraag 1.....
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            Hier komt het antwoord op vraag 1...
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Vraag 2.....
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            Hier komt het antwoord op vraag 2...
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Vraag 3......
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            Hier komt het antwoord op vraag 3....
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Vraag 2.....
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
-                        Hier komt het antwoord op vraag 2...
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Vraag 3......
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body">
-                        Hier komt het antwoord op vraag 3....
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    @RenderPage("Footer.cshtml")
+        </section>
+        @RenderPage("Footer.cshtml")
+    </div>
 </body>
 </html>
