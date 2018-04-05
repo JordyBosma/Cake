@@ -1,27 +1,21 @@
-﻿@using WebMatrix.Data
+﻿@{
+    Auth auth = new Auth();
 
-@{
     Validation.RequireField("Username", "Dit veld mag niet leeg zijn!");
     Validation.RequireField("Password", "Dit veld mag niet leeg zijn!");
 
-    Database db;
-    using (db = Database.Open("Db_fondanti"))
+    if (IsPost && Validation.IsValid())
     {
-        if (IsPost && Validation.IsValid())
+        string username = Request.Form["username"];
+        string password = Request.Form["password"];
+
+        if (auth.Login(username, password) > 0)
         {
-            string Username = Request.Form["Username"];
-            string Password = Request.Form["Password"];
-
-            string select = "SELECT * FROM Accounts WHERE Username = @0 AND Password = @1";
-
-            if (db.QuerySingle(select, Username, Password) != null)
-            {
-                Session["LoggedIn"] = true;
-                Session["Username"] = Username;
-                Response.Redirect("~/Pages/Homepage.cshtml");
-            }
+            Session["LoggedIn"] = true;
+            Session["Username"] = username;
         }
     }
+}
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -50,10 +44,10 @@
                 </div>
             </div>
         </div>
-        <section>
-            <h5>Als bezoeker van Fondanti heeft u geen account nodig!</h5>
-        </section>
-        @RenderPage("Footer.cshtml")
     </div>
+    <section>
+        <h5>Als bezoeker van Fondanti heeft u geen account nodig!</h5>
+    </section>
+    @RenderPage("Footer.cshtml")
 </body>
 </html>

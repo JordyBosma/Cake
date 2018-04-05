@@ -22,7 +22,6 @@ body {
     padding-bottom: 100px;
 }
 
-
 .logoimage{
     height:80px;
     width:110px;
@@ -97,10 +96,6 @@ section{
     margin: 0 auto;
     overflow: auto;
     background-color: black;
-}
-
-.thumbnails {
-    margin-right: -15px;
 }
 
 /*img-thumbnails*/
