@@ -97,8 +97,33 @@
                     2 = Kindervulling (vruchtencompote en room)<br />
                     3 = Gele room met Oreo vulling
                 </p>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                <input type="date" class="form-control inputstl" placeholder="Datum:" id="datum">
+                <input type="text" class="form-control-file col-md-6" id="bestand" placeholder="Klik hier om een afbeelding te uploaden als voorbeeld" onfocus="(this.type='file')"><br />
+                <input type="text" class="form-control inputstl col-md-2" placeholder="Datum taart klaar:" id="datum" onfocus="(this.type='date')"><br />
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" id="voornaam" placeholder="Voornaam:">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" id="achternaam" placeholder="Achternaam:">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control col-md-10" id="adres" placeholder="Adres:">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <input type="text" class="form-control" id="postcode" placeholder="Postcode:">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="woonplaats" placeholder="Woonplaats:">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="text" class="form-control" id="telefoon" placeholder="Telefoon:">
+                    </div>
+                </div>
+                <div class="form-group">
+                </div>
+                <textarea type="text" class="form-control col-6" id="opmerking" name="opmerking" placeholder="Opmerkingen:" rows="3"></textarea><br />
                 <button type="submit" class="btn btn-primary">Verstuur</button>
             </form>
         </div>
