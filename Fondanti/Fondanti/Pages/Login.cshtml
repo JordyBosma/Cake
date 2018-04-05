@@ -1,10 +1,13 @@
 ﻿@using WebMatrix.Data
 
 @{
+    Auth auth = new Auth();
+
     Validation.RequireField("Username", "Dit veld mag niet leeg zijn!");
     Validation.RequireField("Password", "Dit veld mag niet leeg zijn!");
 
     Database db;
+
     using (db = Database.Open("Db_fondanti"))
     {
         if (IsPost && Validation.IsValid())
@@ -12,7 +15,7 @@
             string Username = Request.Form["Username"];
             string Password = Request.Form["Password"];
 
-            string select = "SELECT * FROM Accounts WHERE Username = @0 AND Password = @1";
+            string select = "SELECT UserID, Username, Password FROM Accounts WHERE Username = @0 AND Password = @1";
 
             if (db.QuerySingle(select, Username, Password) != null)
             {
