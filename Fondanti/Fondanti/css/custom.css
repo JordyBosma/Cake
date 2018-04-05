@@ -99,6 +99,34 @@ section{
     background-color: black;
 }
 
+.thumbnails {
+    margin-right: -15px;
+}
+
+/*img-thumbnails*/
+.thumbnails a {
+    float: left;
+    width: 20%;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.thumbnails:hover img {
+    opacity: .6;
+    transform: scale(.92);
+}
+
+.thumbnails img {
+    display: block;
+    transition: all .2s ease-in-out;
+}
+
+.thumbnails img:hover {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+}
+
 
 .modal-content {
     /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
@@ -179,6 +207,11 @@ section{
 
     img.demo {
         opacity: 0.6;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     .active,
