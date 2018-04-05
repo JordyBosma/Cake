@@ -26,34 +26,35 @@
     @RenderPage("Header.cshtml")
 </head>
 <body>
-    @RenderPage("Navbar.cshtml")
-    <section>
-        @if (Session["LoggedIn"] != null)
-        {
-            <div class="container-fluid">
-                <h1>Prijzen ingredienten</h1>
-                <p>Hier kunt u de prijzen van de ingredienten invullen. Alle aangegeven prijzen zijn per persoon (p.p.).</p>
-                <div class="row">
-                    <form method="post">
-                        @foreach (var row in rows)
-                        {
-                            <div class="col-sm-5 col-md-6" style="text-align:left">@row.IngName</div>
-                            <div class="col-sm-5 col-sm-offset-2 col-md-4 col-md-offset-0">
-                                €<input type="text" name="prijs_@(row.IngredientID)" value="@row.IngPrice">
-                            </div>
-                            <button type="submit"><a href="~/Pages/Adminpage.cshtml?UpdateID=@row.IngredientID">Bewerk</a></button>
-                        }
-                    </form>
+    <div class="main-container">
+        @RenderPage("Navbar.cshtml")
+        <section>
+            @if (Session["LoggedIn"] != null)
+            {
+                <div class="container-fluid">
+                    <h1>Prijzen ingredienten</h1>
+                    <p>Hier kunt u de prijzen van de ingredienten invullen. Alle aangegeven prijzen zijn per persoon (p.p.).</p>
+                    <div class="row">
+                        <form method="post">
+                            @foreach (var row in rows)
+                            {
+                                <div class="col-sm-5 col-md-6" style="text-align:left">@row.IngName</div>
+                                <div class="col-sm-5 col-sm-offset-2 col-md-4 col-md-offset-0">
+                                    €<input type="text" name="prijs_@(row.IngredientID)" value="@row.IngPrice">
+                                </div>
+                                <button type="submit"><a href="~/Pages/Adminpage.cshtml?UpdateID=@row.IngredientID">Bewerk</a></button>
+                            }
+                        </form>
+                    </div>
                 </div>
-            </div>
-        }
-        else
-        {
-            <h1>U moet ingelogd zijn om toegang te krijgen op deze pagina!</h1>
-            <p>Indien u niet de administrator bent, hoeft u niets te doen op deze pagina.</p>
-        }
-    </section>
-
-    @RenderPage("Footer.cshtml")
+            }
+            else
+            {
+                <h1>U moet ingelogd zijn om toegang te krijgen op deze pagina!</h1>
+                <p>Indien u niet de administrator bent, hoeft u niets te doen op deze pagina.</p>
+            }
+        </section>
+        @RenderPage("Footer.cshtml")
+    </div>
 </body>
 </html>
