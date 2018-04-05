@@ -99,10 +99,6 @@ section{
     background-color: black;
 }
 
-.thumbnails {
-    margin-right: -15px;
-}
-
 /*img-thumbnails*/
 .thumbnails a {
     float: left;
